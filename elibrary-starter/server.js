@@ -16,7 +16,9 @@ app.get('/', (request, response) => {
 });
 
 app.get('/library', (request, response) => {
+	response.render('library', {
 
+	});
 });
 
 // 6) TODO: Add book input by the form to our list of books on the server.
