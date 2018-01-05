@@ -8,7 +8,9 @@ app.listen(3000, function() {
 	console.log('App listening on port 3000!');
 });
 
-// 3) TODO: Create a Hello, World root endpoint
+app.get('/', (request, response) => {
+	response.send('<h1>Hello, World!</h1>');
+});
 
 // 4) TODO: Set up another endpoint at /library
 
