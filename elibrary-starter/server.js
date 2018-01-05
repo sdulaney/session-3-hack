@@ -9,15 +9,15 @@ app.listen(3000, function() {
 });
 
 app.get('/', (request, response) => {
-	response.send('<h1>Hello, World!</h1>');
+	response.render('home', {
+		title: 'Hello, World!',
+		content: 'Hello, World!'
+	});
 });
 
 app.get('/library', (request, response) => {
 
 });
-
-// 5) Follow up TODO: Create Handlebars view and pass data from 
-//					  server to client at root view
 
 // 6) TODO: Add book input by the form to our list of books on the server.
 
