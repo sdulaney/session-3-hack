@@ -4,7 +4,9 @@ var app = express();
 
 app.set('view engine', 'hbs');
 
-// 2) TODO: Start server to listen to port 3000.
+app.listen(3000, function() {
+	console.log('App listening on port 3000!');
+});
 
 // 3) TODO: Create a Hello, World root endpoint
 
