@@ -1,4 +1,8 @@
-// 1) TODO: Load necessary libraries and setup Express server
+var express = require('express');
+
+var app = express();
+
+app.set('view engine', 'hbs');
 
 // 2) TODO: Start server to listen to port 3000.
 
