@@ -29,7 +29,6 @@ app.get('/error', function(request, response) {
 	response.send('The book is invalid.');
 });
 
-// 6) TODO: Add book input by the form to our list of books on the server.
 app.post('/books/add', function(request, response) {
 	let title = request.body.title;
 	let author = request.body.author;
