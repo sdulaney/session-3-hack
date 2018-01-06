@@ -45,7 +45,6 @@ app.post('/books/add', function(request, response) {
 	}
 });
 
-// 7) TODO: Delete book specified by the client.
 app.get('/books/delete/:isbn', function(request, response) {
 	var isbn = request.params.isbn;
 	for(var i = 0; i < books.length; i++) {
