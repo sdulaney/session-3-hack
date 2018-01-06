@@ -21,7 +21,7 @@ app.get('/', (request, response) => {
 
 app.get('/library', (request, response) => {
 	response.render('library', {
-
+		books: books
 	});
 });
 
