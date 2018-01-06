@@ -25,6 +25,10 @@ app.get('/library', (request, response) => {
 	});
 });
 
+app.get('/error', function(request, response) {
+	response.send('The book is invalid.');
+});
+
 // 6) TODO: Add book input by the form to our list of books on the server.
 
 // 7) TODO: Delete book specified by the client.
