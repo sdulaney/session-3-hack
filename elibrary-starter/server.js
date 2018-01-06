@@ -30,6 +30,16 @@ app.get('/error', function(request, response) {
 });
 
 // 6) TODO: Add book input by the form to our list of books on the server.
+app.post('/books/add', function(request, response) {
+	let title = request.body.title;
+	let author = request.body.author;
+	let isbn = request.body.isbn;
+	let copies = parseInt(request.body.copies);
+
+	if(title.length > 0 && author.length > 0 && isbn.length > 0 && copies > 0) {
+		books.push({title, author, isbn, copies});
+	}
+});
 
 // 7) TODO: Delete book specified by the client.
 
