@@ -54,6 +54,7 @@ app.get('/books/delete/:isbn', function(request, response) {
 			break;
 		}
 	}
+	response.redirect('/library');
 });
 
 
