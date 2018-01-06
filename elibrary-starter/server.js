@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
+var books = initBooks();
 
 app.set('view engine', 'hbs');
 app.use(express.static('public'));
