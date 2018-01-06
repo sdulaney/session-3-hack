@@ -44,7 +44,13 @@
                         <td>Actions</td>
                     </tr>
                 </thead>
-                {{!-- 5) TODO: loop over books and display book title, author, ISBN, and number copies --}}
+                {{#each books}}
+                    <tr>
+                        <td>{{this.title}}<br><span>{{this.author}}</span></td>
+                        <td>{{this.isbn}}</td>
+                        <td>{{this.copies}}</td>
+                    </tr>
+                {{/each}}
                 <tr>
                     <td>Book Title<br /><span>Book Author</span></td>
                     <td>ISBN</td>
