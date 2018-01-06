@@ -49,15 +49,9 @@
                         <td>{{this.title}}<br><span>{{this.author}}</span></td>
                         <td>{{this.isbn}}</td>
                         <td>{{this.copies}}</td>
+                        <td><a href="/books/delete/{{this.isbn}}"><span class="glyphicon glyphicon-remove-circle"></span></a></td>
                     </tr>
                 {{/each}}
-                <tr>
-                    <td>Book Title<br /><span>Book Author</span></td>
-                    <td>ISBN</td>
-                    <td>Number Copies</td>
-                    {{!-- 7) TODO: add link to delete book --}}
-                    <td><span class="glyphicon glyphicon-remove-circle"></span></td>
-                </tr>
             </table>
         </div>
 
