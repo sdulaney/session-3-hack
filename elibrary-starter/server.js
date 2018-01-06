@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var books = initBooks();
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
