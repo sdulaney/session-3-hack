@@ -39,6 +39,9 @@ app.post('/books/add', function(request, response) {
 	if(title.length > 0 && author.length > 0 && isbn.length > 0 && copies > 0) {
 		books.push({title, author, isbn, copies});
 		response.redirect('/library');
+	} else {
+		console.log('You tried to add an invalid book into the elibrary.');
+		response.redirect('/error');
 	}
 });
 
