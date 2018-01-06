@@ -1,18 +1,59 @@
-// 1) TODO: Load necessary libraries and setup Express server
+var express = require('express');
+var bodyParser = require('body-parser');
 
-// 2) TODO: Start server to listen to port 3000.
+var app = express();
+var books = initBooks();
 
-// 3) TODO: Create a Hello, World root endpoint
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('view engine', 'hbs');
+app.use(express.static('public'));
 
-// 4) TODO: Set up another endpoint at /library
+app.listen(3000, function() {
+	console.log('App listening on port 3000!');
+});
 
-// 5) Follow up TODO: Create Handlebars view and pass data from 
-//					  server to client at root view
+app.get('/', (request, response) => {
+	response.render('home', {
+		title: 'Hello, World!',
+		content: 'Hello, World!'
+	});
+});
 
-// 6) TODO: Add book input by the form to our list of books on the server.
+app.get('/library', (request, response) => {
+	response.render('library', {
+		books: books
+	});
+});
 
-// 7) TODO: Delete book specified by the client.
+app.get('/error', function(request, response) {
+	response.send('The book is invalid.');
+});
 
+app.post('/books/add', function(request, response) {
+	let title = request.body.title;
+	let author = request.body.author;
+	let isbn = request.body.isbn;
+	let copies = parseInt(request.body.copies);
+
+	if(title.length > 0 && author.length > 0 && isbn.length > 0 && copies > 0) {
+		books.push({title, author, isbn, copies});
+		response.redirect('/library');
+	} else {
+		console.log('You tried to add an invalid book into the elibrary.');
+		response.redirect('/error');
+	}
+});
+
+app.get('/books/delete/:isbn', function(request, response) {
+	var isbn = request.params.isbn;
+	for(var i = 0; i < books.length; i++) {
+		if(books[i].isbn == isbn) {
+			books.splice(i, 1);
+			break;
+		}
+	}
+	response.redirect('/library');
+});
 
 
 
